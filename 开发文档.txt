@@ -1,0 +1,62 @@
+*需要Tensorflow环境
+
+Python依赖的库:
+	0.	keras
+	1.	numpy
+	2.	jieba
+	3.	pandas
+	4.	gensim
+	5.	sqlite3
+	5.	pyhanlp
+	6.	pandas
+	7.	xlrd
+	8.	jieba
+	9.	PIL
+	10.	wordcloud
+	11.	graphviz
+
+脚本查看步骤：
+	0.基础函数
+		这个其实是为第三个步骤准备的
+		建议先查看下面的脚本
+
+	1.LSTM模型生成
+	2.LSTM分类器
+	3.文本聚类
+
+	4.相似度分析
+	5.演化分析
+
+所用的方法:
+	1.LSTM(长短期记忆网络)
+		LSTM（Long Short-Term Memory）是长短期记忆网络，是一种时间递归神经网络，适合于处理和预测时间序列中间隔和延迟相对较长的重要事件。
+		这里我们用它进行文本分类
+	2.TF-IDF(词频-逆文本频率)
+		TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术。它由两部分组成，TF和IDF。
+		这里我们用它结合Word2Vec生成词袋模型计算主题/文本内容/文本摘要相似度
+	3.TextRank
+		TextRank算法基于PageRank,用于为文本生成关键字和摘要。
+		这里我们用它来生成摘要
+		*目前还没有做到这里
+
+摘要TextRank：
+	1.pyhanlp自动文摘的代码
+		文章链接:https://blog.csdn.net/FontThrone/article/details/82807816
+		第一次import pyhanlp会下载一个比较大的数据集，需要耐心等待下
+		比较大的数据集下载地址:http://static.hankcs.com/hanlp/data-for-1.7.2.zip
+		数据集安装教程:https://blog.csdn.net/huangjiajia123/article/details/84144583
+		如果实在不会的话，把data-1.7.2.zip放在Python\Python37\Lib\site-packages\pyhanlp目录下会自动解压
+		pyhanlp里可以实现很多现在写出来的功能
+
+Dot图生成：
+	1.官网下载：http://www.graphviz.org
+	2.graphviz画决策树图中文乱码问题解决（文件中已经解决、不知道是否需要修改配置文件）
+		2.1.修改graphviz配置文件
+			<!-- Font directory list -->
+			<dir>C:\WINDOWS\Fonts</dir>
+			<dir>~/.fonts</dir>
+		2.2.将决策树dot_data文件保存下来
+		2.3.编码转换成utf-8编码
+		2.4.尽量去除label_name上的空格
+		2.5.fontname使用"Microsoft YaHei"等支持中文的字体
+
